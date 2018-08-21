@@ -1,0 +1,27 @@
+<% if @water.errors.any? %>
+  <div class="alert alert-danger">
+    <h5><%= t('common.errors') %></h5>
+    <ul>
+      <% @water.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @water, url: user_waters_path, html: { method: :post } do |f| %>
+  <div class = 'form-group'>
+    <%= f.label :Горячая %>
+    <%= f.text_field  :hot, class: 'form-control' %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= f.label :Холодная %>
+    <%= f.text_field  :cold, class: 'form-control' %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+    <%= link_to 'Назад', :back, class: 'btn btn-outline-secondary' %>
+  </div>
+<% end %>

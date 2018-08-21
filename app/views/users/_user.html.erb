@@ -1,0 +1,13 @@
+<article class = "user">
+  <% if (current_user.admin?) %>
+    <h4><b><i><%= "Вы администратор этого портала" %></h2><br></i>
+  <% end %>
+  <h3><%= "Имя: #{current_user.name}" %></h3>
+  <h3><%= "Фамилия: #{current_user.fname}" %></h3>
+  <h3><%= "Адрес: #{current_user.address}" %></h3>
+  <h3><%= "Логин: #{current_user.email}" %></h3>
+  <% if (current_user.admin?) %>
+    <%= link_to 'Топ-3 горячих потребителя', hot_liders_admin_users_path, class: 'btn btn-primary' %>
+    <%= link_to 'Топ-3 холодных потребителя', cold_liders_admin_users_path, class: 'btn btn-primary' %>
+  <% end %>
+</article>

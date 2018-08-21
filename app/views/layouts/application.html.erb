@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <div class ="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="<%= users_path%>">SaveWater</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+              <% if user_signed_in? %>
+                <% if !current_user.admin? %>
+	        <li class="nav-item">
+		  <a class="nav-link" href="<%= user_waters_url(current_user.id) %>">Мои счета <span class="sr-only">(current)</span></a>
+	        </li>
+                <li class="nav-item">
+		  <a class="nav-link" href="<%= new_user_water_path(current_user.id) %>">Создать новую запись <span class="sr-only">(current)</span></a>
+	        </li>
+	    </ul>
+            <ul class="navbar-nav pull-xs-right">
+                <li class="nav-item">
+		  <a class="nav-link" href="<%=  edit_user_path(current_user.id) %>"><%= "Изменение пароля, #{current_user.email}" %><span class="sr-only">(current)</span></a>
+	        </li> 
+                <% else %>
+	      <li class="nav-item">
+		<a class="nav-link" href="<%= admin_users_path %>">Все пользователи <span class="sr-only">(current)</span></a>
+	      </li>
+              <li class="nav-item">
+		<a class="nav-link" href="<%=  new_admin_user_path %>">Создать нового пользователя <span class="sr-only">(current)</span></a>
+	      </li>                
+                <% end %>             
+                <li class="nav-item">
+                <%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link" %>
+	      </li>
+              <% else %>
+	      <li class="nav-item">
+                <%= link_to "Вход", new_user_session_path, class: "nav-link" %>
+	      </li>
+              <% end %>
+	    </ul>
+	  </div>
+	</nav>
+    </div>
+    <div class ="container main">
+      <%= yield %>
+    </div>
+  </body>
+</html>

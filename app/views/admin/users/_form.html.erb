@@ -1,0 +1,37 @@
+<% if @user.errors.any? %>
+  <div class="alert alert-danger">
+    <h5><%= t('common.errors') %></h5>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @user, url: admin_users_path, html: { method: :post } do |f| %>
+  <div class = 'form-group'>
+    <%= f.label :Имя %>
+    <%= f.text_field  :name, class: 'form-control' %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= f.label :Фамилия %>
+    <%= f.text_field  :fname, class: 'form-control' %>
+  </div>
+ 
+  <div class = 'form-group'>
+    <%= f.label :Адрес %>
+    <%= f.text_field  :address, class: 'form-control' %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= f.label :Логин %> <i>(Придерживайтесь шаблона "user_login@sw.ru")</i><br />
+    <%= f.text_field  :email, class: 'form-control' %>
+  </div>
+
+  <div class = 'form-group'>
+    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+    <%= link_to 'Назад', :back, class: 'btn btn-outline-secondary' %>
+  </div>
+<% end %>

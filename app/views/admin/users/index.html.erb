@@ -1,0 +1,17 @@
+<h1>Внесенные пользователи</h1>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Имя</th>
+      <th>Фамилия</th>
+      <th>Адрес</th>
+      <th>Логин</th>
+      <th>Перейти к списку данных</th>
+    </tr>
+  </thead>
+ <tbody>
+<%= render @users %>
+ </tbody>
+</table>
+
+<%= link_to 'Назад', :back, class: 'btn btn-outline-secondary' %>

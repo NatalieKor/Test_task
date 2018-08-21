@@ -1,0 +1,6 @@
+  <h3><%= "Дата внесения: #{(Water.find_by user_id: @user.id).datein}" %></h3>
+  <h3><%= "Имя: #{@user.name}" %></h3>
+  <h3><%= "Фамилия: #{@user.fname}" %></h3>
+<%= link_to 'Перейти к списку данных', admin_user_waters_url(user.id), class: 'btn btn-outline-secondary' %>
+<%= link_to 'Назад', :back, class: 'btn btn-outline-secondary' %>
+

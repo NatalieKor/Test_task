@@ -1,0 +1,7 @@
+<tr>
+  <th><%= "#{user.name}" %></th>
+  <td><%= "#{user.fname}"%></td>
+  <td><%= "#{user.address}"%></td>
+  <td><%= "#{user.email}"%></td>
+  <td><%= link_to "Перейти", admin_user_waters_url(user.id)%></td>
+</tr>

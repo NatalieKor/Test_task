@@ -1,0 +1,18 @@
+<h1>Изменение пароля</h1>
+<%= form_for @user, :url => { :action => "updatepas" }, html: { method: :patch } do |f| %>
+  <div class = 'form-group'>
+    <%= f.label :password, "Новый пароль" %><br />
+    <%= f.password_field :password, :autocomplete => "off", class: 'form-control'  %>
+  </div>
+  <div class = 'form-group'>
+    <%= f.label :"Подтвердите новый пароль" %><br />
+    <%= f.password_field :password_confirmation, class: 'form-control'%>
+  </div>
+  <div class = 'form-group'>
+    <%= f.label :"Текущий пароль" %> <i>(Нам нужен ваш текущий пароль для подтверждения изменений)</i><br />
+    <%= f.password_field :current_password, class: 'form-control' %>
+  </div>
+  <div class = 'form-group'>
+    <%= f.submit 'Сохранить', class: 'btn btn-primary'%>
+  </div>
+<% end %>

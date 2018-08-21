@@ -1,0 +1,6 @@
+<tr>
+  <th scope="row"><%= "#{water.datein.strftime("%d %b. %Y")}" %></th>
+  <td><%= "#{water.hot}"%></td>
+  <td><%= "#{water.cold}"%></td>
+  <td><%= link_to "#{User.find_by(id:water.user_id).name}", admin_user_waters_url(User.find_by(id:water.user_id).id)%></td>
+</tr>
