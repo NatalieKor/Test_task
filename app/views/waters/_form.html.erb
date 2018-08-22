@@ -11,12 +11,12 @@
 
 <%= form_for @water, url: user_waters_path, html: { method: :post } do |f| %>
   <div class = 'form-group'>
-    <%= f.label :Горячая %>
+    <%= f.label :hot %>
     <%= f.text_field  :hot, class: 'form-control' %>
   </div>
 
   <div class = 'form-group'>
-    <%= f.label :Холодная %>
+    <%= f.label :cold %>
     <%= f.text_field  :cold, class: 'form-control' %>
   </div>
 

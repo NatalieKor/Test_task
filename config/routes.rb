@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, :skip => [:registrations]                                          
+  devise_for :users, :skip => [:registrations]   
+                                       
   root 'users#index'
+
   resources :users, except: [:index ,:show, :update]
+
   resource :users, only: [:edit] do
     collection do
       patch 'updatepas'

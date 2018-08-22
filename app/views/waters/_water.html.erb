@@ -1,5 +1,5 @@
 <tr>
-  <th scope="row"><%= "#{water.datein.strftime("%d %b. %Y")}" %></th>
+  <th scope="row"><%= l water.datein, :format => :short %></th>
   <td><%= "#{water.hot}"%></td>
   <td><%= "#{water.cold}"%></td>
 </tr>

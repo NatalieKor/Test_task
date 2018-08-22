@@ -18,7 +18,7 @@ class WatersController < ApplicationController
     elsif(Water.where(user_id: current_user.id).last.datein.month!=Time.current.month)
          water_in
        else 
-         @water.errors.add(:datein, "can be added only once a month")
+         @water.errors.add(:datein, :datein_invalid)
          render :new
       end
   end

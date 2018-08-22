@@ -1,0 +1,15 @@
+ru:
+  common:
+    errors: 'При заполнении формы возникли ошибки'
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+    month_names: [~, Января, Февраля, Марта, Апреля, Мая, Июня, Июля, Августа, Сентября, Октября, Ноября, Декабря]
+    abbr_month_names: [~, Янв, Фев, Мар, Апр, Маи, Июн, Июл, Авг, Сен, Окт, Ноя, Дек]
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M:%S"
+      short: "%d %B %H:%M"
+      long: "%B %d, %Y %H:%M"
