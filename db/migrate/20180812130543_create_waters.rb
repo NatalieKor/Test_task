@@ -1,8 +1,8 @@
 class CreateWaters < ActiveRecord::Migration[5.2]
   def change
     create_table :waters do |t|
-      t.integer :hot
-      t.integer :cold
+      t.float :hot
+      t.float :cold
       t.datetime :datein
 
       t.timestamps
