@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_094236) do
+ActiveRecord::Schema.define(version: 2018_08_22_131943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_094236) do
   end
 
   create_table "waters", force: :cascade do |t|
-    t.integer "hot"
-    t.integer "cold"
+    t.float "hot"
+    t.float "cold"
     t.datetime "datein"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
